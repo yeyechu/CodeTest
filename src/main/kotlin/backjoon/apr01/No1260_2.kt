@@ -1,0 +1,64 @@
+package backjoon.apr01
+
+import java.util.LinkedList
+import java.util.StringTokenizer
+import java.util.TreeSet
+
+// 다른 사람 답 -> 1/10배 빠름
+private lateinit var adjacencyList: Array<TreeSet<Int>>
+private lateinit var isVisited: BooleanArray
+
+private val resultBuilder: StringBuilder = StringBuilder()
+
+fun main() {
+    var st = StringTokenizer(readln())
+    val n = st.nextToken().toInt()
+    val m = st.nextToken().toInt()
+    val v = st.nextToken().toInt()
+
+    adjacencyList = Array(size = n + 1) { TreeSet<Int>() }
+    repeat(m) {
+        st = StringTokenizer(readln())
+        val s = st.nextToken().toInt()
+        val e = st.nextToken().toInt()
+        adjacencyList[s].add(e)
+        adjacencyList[e].add(s)
+    }
+
+    isVisited = BooleanArray(size = n + 1).apply { this[v] = true }
+    dfs(v)
+    resultBuilder.appendLine()
+    isVisited = BooleanArray(size = n + 1).apply { this[v] = true }
+    bfs2(v)
+
+    System.out.bufferedWriter().use {
+        it.write(resultBuilder.toString())
+        it.flush()
+    }
+}
+
+private fun dfs(u: Int) {
+    resultBuilder.append(u, ' ')
+
+    adjacencyList[u].forEach { v ->
+        if (isVisited[v]) return@forEach
+
+        isVisited[v] = true
+        dfs(v)
+    }
+}
+
+private fun bfs2(s: Int) {
+    val nextNodes = LinkedList<Int>().apply { offer(s) }
+    while (nextNodes.isNotEmpty()) {
+        val u = nextNodes.poll()
+        resultBuilder.append(u, ' ')
+
+        adjacencyList[u].forEach { v ->
+            if (isVisited[v]) return@forEach
+
+            isVisited[v] = true
+            nextNodes.offer(v)
+        }
+    }
+}
