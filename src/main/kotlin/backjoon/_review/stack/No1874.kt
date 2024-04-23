@@ -12,6 +12,7 @@ fun main() {
     // 입력 ───────────────────────────────────────────────────────────────────────
     val buffer = java.io.BufferedReader(java.io.InputStreamReader(System.`in`))
     val sb = StringBuilder()
+    val read = java.util.Scanner(System.`in`)
 
     val size = buffer.readLine().toInt()
     val numbers = IntArray(size) { 0 }

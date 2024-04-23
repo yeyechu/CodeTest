@@ -2,6 +2,7 @@ package backjoon.apr13
 
 // 동전 0 : 그리디 알고리즘
 // size -> 1 ~ 10, value -> 1 ~ 100,000,000
+// 시간 초과
 
 fun main() {
     val buffer = java.io.BufferedReader(java.io.InputStreamReader(System.`in`))
@@ -33,9 +34,7 @@ fun find(target: Int, nums: IntArray): Int {
 
         for (i in index until nums.size) {
             path.add(nums[i])
-            if (path.size < ans) {
-                dfs(target - nums[i], i, path)
-            }
+            dfs(target - nums[i], i, path)
             path.removeLast()
         }
     }
