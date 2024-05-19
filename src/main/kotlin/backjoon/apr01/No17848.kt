@@ -3,6 +3,8 @@ package backjoon.apr01
 // Flight Turbulence : 구현, 그래프 이론, 그래프 탐색
 // 비행기 승객 좌석 변경
 
+// 148ms
+
 fun main() {
     val br = java.io.BufferedReader(java.io.InputStreamReader(System.`in`))
     val (size, start) = br.readLine().split(" ").map { it.toInt() }

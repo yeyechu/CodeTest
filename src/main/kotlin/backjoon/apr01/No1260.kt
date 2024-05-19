@@ -3,6 +3,8 @@ package backjoon.apr01
 // DFS 와 BFS : 그래프 이론, 그래프 탐색, 너비 우선 탐색, 깊이 우선 탐색
 // 노드와 간선이 주어지면 DFS, BFS 수행 결과 출력
 
+// -> 시간 초과!!
+
 fun main() {
 
     val br = java.io.BufferedReader(java.io.InputStreamReader(System.`in`))

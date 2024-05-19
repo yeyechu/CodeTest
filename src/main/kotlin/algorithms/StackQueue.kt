@@ -65,15 +65,19 @@ fun main() {
         println(stack.pop())
         stack.display()
     }
-    val stackd: java.util.Deque<Char> = java.util.ArrayDeque()
+
+    val stackDeque: java.util.Deque<Int> = java.util.ArrayDeque()
 
     println(stack.toString())
 
-    stack.push(1)
-    stack.push(2)
-    stack.allClear()
+    stackDeque.push(1)
+    stackDeque.push(2)
 
-    println(stack.toString())
+    println(stackDeque.toString())
+
+    stackDeque.clear()
+
+    println(stackDeque.toString())
     // ──────────────────────────────────────────────────────
     val node1 = ListNode(1)
     val node2 = ListNode(2)

@@ -1,52 +1,61 @@
 package backjoon.mar20
 
 // 덱 : 구현, 자료구조, 덱
+// n -> 1 ~ 10,000 / 시간 제한 -> 0.5초
+
+// kotlin.io -> 488ms
+// BufferedReader, StringBuilder -> 204ms
 
 fun main() {
-    val times = readln().toInt()
+    val buffer = java.io.BufferedReader(java.io.InputStreamReader(System.`in`))
+    val times = buffer.readLine().toInt()
+    val sb = StringBuilder()
+
     val deque: java.util.Deque<Int> = java.util.ArrayDeque()
 
     repeat(times) {
-        val ins = readln().split(" ")
+        val ins = buffer.readLine().split(" ")
         when(ins[0]) {
             "push_front" -> { deque.addFirst(ins[1].toInt()) }
             "push_back" -> { deque.addLast(ins[1].toInt()) }
             "pop_front" -> {
                 if (deque.isEmpty()) {
-                    println(-1)
+                    sb.append(-1).appendLine()
                 } else {
-                    println(deque.pollFirst())
+                    sb.append(deque.pollFirst()).appendLine()
                 }
             }
             "pop_back" -> {
                 if (deque.isEmpty()) {
-                    println(-1)
+                    sb.append(-1).appendLine()
                 } else {
-                    println(deque.pollLast())
+                    sb.append(deque.pollLast()).appendLine()
                 }
             }
-            "size" -> { println(deque.size) }
+            "size" -> { sb.append(deque.size).appendLine() }
             "empty" -> {
                 if (deque.isEmpty()) {
-                    println(1)
+                    sb.append(1).appendLine()
                 } else {
-                    println(0)
+                    sb.append(0).appendLine()
                 }
             }
             "front" -> {
                 if (deque.isEmpty()) {
-                    println(-1)
+                    sb.append(-1).appendLine()
                 } else {
-                    println(deque.peekFirst())
+                    sb.append(deque.peekFirst()).appendLine()
                 }
             }
             "back" -> {
                 if (deque.isEmpty()) {
-                    println(-1)
+                    sb.append(-1).appendLine()
                 } else {
-                    println(deque.peekLast())
+                    sb.append(deque.peekLast()).appendLine()
                 }
             }
         }
     }
+    buffer.close()
+    print(sb)
 }

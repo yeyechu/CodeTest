@@ -4,12 +4,12 @@ package backjoon.mar15
 
 fun main() {
     val map = mapOf(')' to '(')
-
-    val times = readln().toInt()
+    val buffer = java.io.BufferedReader(java.io.InputStreamReader(System.`in`))
+    val times = buffer.readLine().toInt()
 
     repeat(times) {
         val stack: java.util.Deque<Char> = java.util.ArrayDeque()
-        val input = readln().toCharArray()
+        val input = buffer.readLine().toCharArray()
         var isCorrect = true
 
         for (i in input.indices) {
@@ -31,4 +31,6 @@ fun main() {
             println("NO")
         }
     }
+
+    buffer.close()
 }
