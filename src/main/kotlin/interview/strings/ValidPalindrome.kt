@@ -34,7 +34,7 @@ fun isPalindrome(s: String) : Boolean {
 }
 
 fun isPalindrome2(s: String) : Boolean {
-    val sFiltered = s.replace("[^A-Za-z0-9]".toRegex(), "").lowercase(Locale.getDefault())
+    val sFiltered = s.replace("[^A-Za-z0-9]".toRegex(), "").lowercase()
     val sReversed = StringBuilder(sFiltered).reverse().toString()
 
     return sFiltered == sReversed

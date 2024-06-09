@@ -3,7 +3,7 @@ package interview.strings
 import kotlin.system.measureTimeMillis
 
 fun main() {
-    val array: CharArray = charArrayOf('a', 'b', 'c', 'd')
+    val array: CharArray = "Do geese see God?".toCharArray()
 
     println("${measureTimeMillis {
         reverseString(array)

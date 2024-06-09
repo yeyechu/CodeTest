@@ -20,3 +20,4 @@ fun anagrams(str: Array<String>): List<List<String>> {
     }
     return ArrayList<List<String>>(results.values)
 }
+
