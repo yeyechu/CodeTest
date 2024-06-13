@@ -1,6 +1,6 @@
 package leetcode
 
-import algorithms.ListNode
+import interview.stackqueue.ListNode
 
 fun main() {
     println(mergeKLists(arrayOf(ListNode(1, ListNode(4, ListNode(5))), ListNode(1, ListNode(3, ListNode(4))), ListNode(2, ListNode(7)))))

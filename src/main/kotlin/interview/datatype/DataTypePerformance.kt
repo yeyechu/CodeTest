@@ -1,4 +1,4 @@
-package algorithms
+package interview.datatype
 
 import kotlin.system.measureTimeMillis
 

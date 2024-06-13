@@ -1,4 +1,4 @@
-package algorithms
+package interview.stackqueue
 
 data class ListNode (
     var item: Int,

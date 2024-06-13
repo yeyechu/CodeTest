@@ -1,4 +1,4 @@
-package algorithms
+package interview.bigoh
 
 import java.util.*
 import kotlin.system.measureTimeMillis

@@ -1,4 +1,4 @@
-package algorithms;
+package interview.datatype;
 
 public class DataTypeForJava {
     private static final int times = 100000000;
